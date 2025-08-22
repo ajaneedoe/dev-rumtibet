@@ -1,20 +1,32 @@
 ///fonts///
-$font-primary: "";
-$font-secondary:  "";
+$font-primary: 'NunitoSans';
+$font-secondary: 'NEXT-ART';
 $font-size-base: 16px;
 
 ///colors///
-$primary-color: #66fcf1;
-$primary-hover-color: #45a29e;
-$bg-color: #0b0c10;
-$bg-accent-color: #1f2833;
-$text-color: #c5c6c7;
+$primary-color: #1a3e3e;
+$bg-color: #f3f5f4;
+$text-accent-color: #f2be22;
+$bg-accent-color: #ffffff;
+$brand-light-color: #fdfdfd;
+$brand-dark-color: #18121e;
 
 
 ///font///
-$h1-font-size: $font-size-base * 2.5;
-$h2-font-size: $font-size-base * 2;
-$h3-font-size: $font-size-base * 1.75;
-$h4-font-size: $font-size-base * 1.5;
-$h5-font-size: $font-size-base * 1.25;
-$h6-font-size: $font-size-base;
+$h1-font-size: 50px;
+$h2-font-size: 32px;
+$h3-font-size: 26px;
+$h4-font-size: 24px;
+$h5-font-size: 20px;
+$h6-font-size: 18px;
+
+$h1-line-height: 150%;
+$h2-line-height: 120%;
+$h3-line-height: 120%;
+$h4-line-height: 133%;
+$h5-line-height: 120%;
+$h6-line-height: 111%;
+
+h1 {
+    font-family: $font-secondary;
+}
