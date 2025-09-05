@@ -1,134 +1,223 @@
-@@include('templates/head.html')
-@@include('templates/header.html')
-<main>
-    <div class="ui-grid">
-        <div class="ui-item">
-            <h2>colors</h2>
-            <ul class="ui-grid">
-                <li class="ui-item">
-                    <figure>
-                        <div style="background-color: #1a3e3e; width: 150px; height: 150px;"></div>
-                        <figcaption>$primary-color: #1a3e3e</figcaption>
-                    </figure>
-                </li>
-                <li class="ui-item">
-                    <figure>
-                        <div style="background-color: #f3f5f4; width: 150px; height: 150px; border: 1px solid"></div>
-                        <figcaption>$bg-color: #f3f5f4</figcaption>
-                    </figure>
-                </li>
-                <li class="ui-item">
-                    <figure>
-                        <div style="background-color: #f2be22; width: 150px; height: 150px; border: 1px solid"></div>
-                        <figcaption>$text-accent-color: #f2be22;</figcaption>
-                    </figure>
-                </li>
-                <li class="ui-item">
-                    <figure>
-                        <div style="background-color: #ffffff; width: 150px; height: 150px; border: 1px solid;"></div>
-                        <figcaption>$bg-accent-color: #ffffff;</figcaption>
-                    </figure>
-                </li>
-                </li>
-                <li class="ui-item">
-                    <figure>
-                        <div style="background-color: #fdfdfd; width: 150px; height: 150px; border: 1px solid"></div>
-                        <figcaption>$$brand-light-color: #fdfdfd;</figcaption>
-                    </figure>
-                </li>
-                </li>
-                <li class="ui-item">
-                    <figure>
-                        <div style="background-color: #18121e; width: 150px; height: 150px; border: 1px solid"></div>
-                        <figcaption>$$brand-dark-color: #18121e;</figcaption>
-                    </figure>
-                </li>
-            </ul>
-        </div>
+<!DOCTYPE html>
+<html lang="ru">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#1A3E3E">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Румтибет</title>
+    <link rel="shortcut icon" href="./assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-        <div class="ui-item">
-            <h2>text color, font bold, font italic, link, ::selection</h2>
-            <p>
-                <strong>
-                    Lorem ipsum dolor sit amet.
-                </strong>
-            </p>
-            <p>
-                <b>
-                    Lorem ipsum dolor sit amet.
-                </b>
-            </p>
-            <p>
-                <i>Lorem ipsum dolor sit amet.</i>
-            </p>
-            <p>
-                <em>
-                    Lorem ipsum dolor sit amet.
-                </em>
-            </p>
-            <p>
-                <a href="#"> Lorem ipsum dolor sit amet.</a>
-            </p>
-        </div>
-        <div class="ui-item">
-            <h2>Font-family</h2>
-            <ul>
-                <li style="font-family: 'NEXT-ART';">NEXT-ART</li>
-                <li style="font-family: 'NunitoSans';">NunitoSans</li>
-            </ul>
-        </div>
-        <div class="ui-item">
-            <h2>Font-weight</h2>
-            <ul>
-                <li style="font-weight: 300;"> 300 - Lorem ipsum dolor sit.</li>
-                <li style="font-weight: 400;"> 400 - Lorem ipsum dolor sit.</li>
-                <li style="font-weight: 600;"> 600 - Lorem ipsum dolor sit.</li>
-                <li style="font-weight: 700;"> 700 - Lorem ipsum dolor sit.</li>
-                <li style="font-weight: 800;"> 800 - Lorem ipsum dolor sit.</li>
-            </ul>
-        </div>
-        <div class="ui-item">
-            <h2>Title h1-h6</h2>
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
-            <h4>Lorem ipsum dolor sit amet consectetur adipisicing.</h4>
-            <h5>Lorem ipsum dolor sit amet consectetur adipisicing.</h5>
-            <h6>Lorem ipsum dolor sit amet consectetur adipisicing.</h6>
-        </div>
-        <div class="ui-item" style="background: url(../assets/img/banner.png) center / cover;">
-            <h2>Исследуйте все горные массивы мира вместе с нами</h2>
+<body>
+
+    <header>
+        <h2>Header</h2>
+    </header>
+    <main>
+        <div class="ui-grid">
+            <div class="ui-item">
+                <h4>Colors</h4>
+                <ul class="ui-grid">
+                    <li class="ui-item">
+                        <figure>
+                            <div style="width: 150px; height: 150px; background-color: #1A3E3E; border: 1px solid;">
+                            </div>
+                            <figurecaption>$primary-color: #1A3E3E;</figurecaption>
+                        </figure>
+                    </li>
+                    <li class="ui-item">
+                        <figure>
+                            <div style="width: 150px; height: 150px; background-color: #F3F5F4; border: 1px solid;">
+                            </div>
+                            <figurecaption>$bg-color: #F3F5F4;</figurecaption>
+                        </figure>
+                    </li>
+                    <li class="ui-item">
+                        <figure>
+                            <div style="width: 150px; height: 150px; background-color: #F2BE22; border: 1px solid;">
+                            </div>
+                            <figurecaption>$text-accent-color: #F2BE22;</figurecaption>
+                        </figure>
+                    </li>
+                    <li class="ui-item">
+                        <figure>
+                            <div style="width: 150px; height: 150px; background-color: #ffffff; border: 1px solid;">
+                            </div>
+                            <figurecaption>$bg-accent-color: #ffffff;</figurecaption>
+                        </figure>
+                    </li>
+                    <li class="ui-item">
+                        <figure>
+                            <div style="width: 150px; height: 150px; background-color: #FDFDFD; border: 1px solid;">
+                            </div>
+                            <figurecaption>$brand-light-color: #FDFDFD;</figurecaption>
+                        </figure>
+                    </li>
+                    <li class="ui-item">
+                        <figure>
+                            <div style="width: 150px; height: 150px; background-color: #18121E; border: 1px solid;">
+                            </div>
+                            <figurecaption>$barnd-dark-color: #18121E;</figurecaption>
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+            <div class="ui-item">
+                <h2>text color, font bold, font italic, link, ::selection</h2>
+                <p>
+                    <strong>
+                        Lorem ipsum dolor sit amet.
+                    </strong>
+                </p>
+                <p>
+                    <b>
+                        Lorem ipsum dolor sit amet.
+                    </b>
+                </p>
+                <p>
+                    <i>Lorem ipsum dolor sit amet.</i>
+                </p>
+                <p>
+                    <em>
+                        Lorem ipsum dolor sit amet.
+                    </em>
+                </p>
+                <p>
+                    <a href="#"> Lorem ipsum dolor sit amet.</a>
+                </p>
+            </div>
+            <div class="ui-item">
+                <h4>font-family</h4>
+                <ul>
+                    <li style="font-family: 'Next-ART';">Next-ART</li>
+                    <li style="font-family: 'NunitoSans';">NunitoSans</li>
+                </ul>
+            </div>
+            <div class="ui-item">
+                <h4>font-weigth</h4>
+                <ul>
+                    <li style="font-weight: 300;">300 - Lorem, ipsum dolor.</li>
+                    <li style="font-weight: 400;">400 - Lorem, ipsum dolor.</li>
+                    <li style="font-weight: 600;">600 - Lorem, ipsum dolor.</li>
+                    <li style="font-weight: 700;">700 - Lorem, ipsum dolor.</li>
+                    <li style="font-weight: 800;">800 - Lorem, ipsum dolor.</li>
+                </ul>
+            </div>
+            <div class="ui-item">
+                <h4>Titles h1-h6</h4>
+                <h1>Lorem ipsum dolor sit.</h1>
+                <h2>Lorem ipsum dolor sit.</h2>
+                <h3>Lorem ipsum dolor sit.</h3>
+                <h4>Lorem ipsum dolor sit.</h4>
+                <h5>Lorem ipsum dolor sit.</h5>
+                <h6>Lorem ipsum dolor sit.</h6>
+            </div>
+            <div class="ui-item" style="background: url(./assets/img/banner.png) center / cover;">
+ 
+                <h4>Исследуйте все горные массивы мира вместе с нами</h4>
+
             <form style="padding: 48px; background-color: #ffffff33; backdrop-filter: blur(6px); border-radius: 10px;">
                 <div class="input-box">
                     <input id="date" class="date-input" type="text" placeholder="Дата похода">
-                    <label for="date">
+                    <label for="date" class="label-icon">
                         <svg>
                             <use href="#icon-date"></use>
                         </svg>
                     </label>
+                    <label for="date">укажите дату похода</label>
                 </div>
+                <div class="input-box">
+                    <select name="locations" id="locations-select">
+                        <option value="kyiv">Київ</option>
+                        <option value="lviv">Львів</option>
+                        <option value="odesa">Одеса</option>
+                        <option value="kharkiv">Харків</option>
+                        <option value="dnipro">Дніпро</option>
+                        <option value="kamianets">Кам’янець-Подільський</option>
+                        <option value="chernivtsi">Чернівці</option>
+                        <option value="carpathians">Карпати</option>
+                        <option value="uzhhorod">Ужгород</option>
+                        <option value="kherson">Херсонщина</option>
+                    </select>
+                    <label for="locations-select">выберите из списка</label>
+                </div>
+                <div class="input-box">
+                    <select name="members" id="members-select">
+                        <option value="4">4 человека</option>
+                        <option value="5">5 человек</option>
+                        <option value="6">6 человек</option>
+                        <option value="7">7 человек</option>
+                        <option value="8">8 человек</option>
+                        <option value="9">9 человек</option>
+                        <option value="10">10 человек</option>
+                        <option value="more">больше 10 человек</option>
+                    </select>
+                     <label for="select">минимум 4 человека</label>
+                </div>
+
             </form>
-             <div class="ui-item">
-                <h2>selects</h2>
-        </div>
 
-        <div class="ui-item">
-            <h2>Buttons</h2>
         </div>
-
+      
+        <div class="ui-item" style="background:#e2d0d0bd" >
+            <h4>Buttons</h4>
+            <a href="#" class="btn btn_primary">Консультация</a>
+            <button type="button" class="btn btn_primary">Консультация</button>
+            <br>
+            <a href="#" class="btn btn_primary btn-lg">Консультация</a>
+            <button type="button" class="btn btn_primary btn_lg">Консультация</button>
+            <br>
+            <a href="#" class="btn btn_secondary">Консультация</a>
+            <button type="button" class="btn btn_secondary">Консультация</button>
+        </div>
     </div>
 </main>
-<style>
-    .ui-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 12px;
-    }
+    <style>
+        .ui-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
 
-    .ui-item {
-        border: 1px solid #5c5c5c;
-        padding: 24px;
-    }
-</style>
-@@include('templates/footer.html')
+        .ui-item {
+            border: 1px solid #5e5e5e;
+            padding: 24px;
+        }
+    </style>
+    <footer>
+        <h4>Footer</h4>
+    </footer>
+    <svg>
+        <symbol id="icon-date" width="18" height="18" viewBox="0 0 18 18" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1_196)">
+                <path
+                    d="M16.3125 18H1.6875C0.75375 18 0 17.2463 0 16.3125V2.8125C0 1.87875 0.75375 1.125 1.6875 1.125H16.3125C17.2463 1.125 18 1.87875 18 2.8125V16.3125C18 17.2463 17.2463 18 16.3125 18ZM1.6875 2.25C1.3725 2.25 1.125 2.4975 1.125 2.8125V16.3125C1.125 16.6275 1.3725 16.875 1.6875 16.875H16.3125C16.6275 16.875 16.875 16.6275 16.875 16.3125V2.8125C16.875 2.4975 16.6275 2.25 16.3125 2.25H1.6875Z"
+                    fill="currentColor" />
+                <path
+                    d="M5.0625 4.5C4.7475 4.5 4.5 4.2525 4.5 3.9375V0.5625C4.5 0.2475 4.7475 0 5.0625 0C5.3775 0 5.625 0.2475 5.625 0.5625V3.9375C5.625 4.2525 5.3775 4.5 5.0625 4.5ZM12.9375 4.5C12.6225 4.5 12.375 4.2525 12.375 3.9375V0.5625C12.375 0.2475 12.6225 0 12.9375 0C13.2525 0 13.5 0.2475 13.5 0.5625V3.9375C13.5 4.2525 13.2525 4.5 12.9375 4.5ZM17.4375 6.75H0.5625C0.2475 6.75 0 6.5025 0 6.1875C0 5.8725 0.2475 5.625 0.5625 5.625H17.4375C17.7525 5.625 18 5.8725 18 6.1875C18 6.5025 17.7525 6.75 17.4375 6.75Z"
+                    fill="currentColor" />
+            </g>
+            <defs>
+                <clipPath id="clip0_1_196">
+                    <rect width="18" height="18" fill="white" />
+                </clipPath>
+            </defs>
+        </symbol>
+    </svg>
+    <a href="ui-kit.html"
+        style="position: fixed; bottom: 12px; left: 18px; background-color: #ff0000; color: #ffffff; padding: 6px 18px; border-radius: 50%; text-decoration: none; font-weight: 600;">ui-kit</a>
+    <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.6.0/air-datepicker.min.js"></script>
+    <script async src="./assets/js/custom.js"></script>
+</body>
+
+</html>
