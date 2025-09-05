@@ -1,15 +1,16 @@
 ///fonts///
-$font-primary: "Nunito Sans", sans-serif; 
-$font-secondary: 'NEXT-ART';
+$font-primary: "NunitoSans";
+$font-secondary: "Next-ART";
 $font-size-base: 16px;
 
 ///colors///
-$primary-color: #1a3e3e;
-$bg-color: #f3f5f4;
-$text-accent-color: #f2be22;
+$primary-color: #1A3E3E;
+$primary-hover-color: #45a29e;
+$bg-color: #F3F5F4;
 $bg-accent-color: #ffffff;
-$brand-light-color: #fdfdfd;
-$brand-dark-color: #18121e;
+$text-accent-color: #F2BE22;
+$brand-light-color: #FDFDFD;
+$brand-dark-color: #18121E;
 
 
 ///font///
@@ -19,15 +20,26 @@ $h3-font-size: 26px;
 $h4-font-size: 24px;
 $h5-font-size: 20px;
 $h6-font-size: 18px;
-
-$h1-line-height: 150%;
-$h2-line-height: 120%;
-$h3-line-height: 120%;
-$h4-line-height: 133%;
-$h5-line-height: 120%;
-$h6-line-height: 111%;
+$h1-line-height: 1.5;
+$h2-line-height: 1.2;
+$h3-line-height: 1.2;
+$h4-line-height: 1.33;
+$h5-line-height: 1.2;
+$h6-line-height: 1.11;
 
 @mixin background-blur {
     background-color: #ffffff33;
     backdrop-filter: blur(6px);
 }
+
+@mixin btn_secondary {
+    border: 1px solid $brand-light-color;
+    background-color: $brand-light-color;
+    color: $primary-color;
+        
+    &:hover {
+            background-color: $primary-color;
+            color: $brand-light-color;
+            border-color: $primary-color;
+        }
+    }
