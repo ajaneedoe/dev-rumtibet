@@ -1,5 +1,13 @@
-@use "../../sass/variables";
+@use '../variables' as variables;
 
 @media (min-width: 1025px) {
+    .hamburger,
+    #show-program,
+    .header__nav-link svg {
+        display: none;
+    }
 
+    .header__mobile-container {
+        margin-left: auto;
+    }
 }

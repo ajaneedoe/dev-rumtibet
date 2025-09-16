@@ -1,10 +1,69 @@
-@use "variables";
+@use 'variables' as variables;
 
-header {
-	display: flex;
-	align-items: center;
-	height: 60px;
-	padding: 15px 12px;
-	background: variables.$bg-accent-color;
-	color: variables.$bg-color
+.header {
+    padding: 16px 0;
+    margin-bottom: -104px;
+    z-index: 10;
+
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        img {
+            height: 72px;
+        }
+    }
+
+    &__mobile-container {
+        display: flex;
+        gap: 38px;
+        align-items: center;
+
+        &.show {
+            display: flex;
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+    }
+
+    &__nav-link {
+        padding: 12px;
+        display: inline-block;
+        color: variables.$brand-light-color;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.12px;
+
+        &:focus,
+        &:focus-visible {
+            outline: none;
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: variables.$text-accent-color;
+
+            svg {
+                margin-right: 16px;
+            }
+        }
+    }
+}
+
+.hamburger {
+    z-index: 10;
+    margin-left: auto;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after,
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: variables.$bg-accent-color;
 }
