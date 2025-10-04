@@ -3,17 +3,17 @@
         <h1 class="first-screen__title">Насладись прогулкой в горах с командой единомышленников</h1>
         <form class="first-screen-form">
             <div class="input-box">
-                <select name="locations" id="locations-select" class="hidden-select">
-                    <option value="kyiv">Київ</option>
-                    <option value="lviv">Львів</option>
-                    <option value="odesa">Одеса</option>
-                    <option value="kharkiv">Харків</option>
-                    <option value="dnipro">Дніпро</option>
-                    <option value="kamianets">Кам’янець-Подільський</option>
-                    <option value="chernivtsi">Чернівці</option>
-                    <option value="carpathians">Карпати</option>
-                    <option value="uzhhorod">Ужгород</option>
-                    <option value="kherson">Херсонщина</option>
+                <select name="locations" id="locations-select">
+                    <option value="Киев">Киев</option>
+                    <option value="Львов">Львов</option>
+                    <option value="Одесса">Одесса</option>
+                    <option value="Карпаты">Карпаты</option>
+                    <option value="Каменец-Подольский">Каменец-Подольский</option>
+                    <option value="Черновцы">Черновцы</option>
+                    <option value="Харьков">Харьков</option>
+                    <option value="Днепр">Днепр</option>
+                    <option value="Ужгород">Ужгород</option>
+                    <option value="Буковель">Буковель</option>
                 </select>
                 <label for="locations-select">выберите из списка</label>
             </div>
@@ -21,29 +21,28 @@
                 <input id="date" class="date-input" type="text" placeholder="Дата похода">
                 <label for="date" class="label-icon">
                     <svg>
-                        <use href="#icon-date"></use>
+                        <use href="#date-icon"></use>
                     </svg>
                 </label>
-                <label for="date">укажите дату похода</label>
+                <label for="date">выберете дату</label>
             </div>
             <div class="input-box">
-                <select name="members" id="members-select" class="hidden-select">
-                    <option value="4">4 человека</option>
-                    <option value="5">5 человек</option>
-                    <option value="6">6 человек</option>
-                    <option value="7">7 человек</option>
-                    <option value="8">8 человек</option>
-                    <option value="9">9 человек</option>
-                    <option value="10">10 человек</option>
-                    <option value="more">больше 10 человек</option>
+                <select name="members" id="members-select">
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="Более 10">более 10</option>
                 </select>
                 <label for="members-select">минимум 4 человека</label>
             </div>
             <div class="input-box">
-                <button type="submit" class="btn btn_secondary btn_lg">Найти программу</button>
+                <button type="button" id="triger-request" class="btn btn_secondary btn_lg" data-triger-modal="request">Оставить заявку</button>
             </div>
         </form>
-        <button id="show-program" type="button" class="btn btn_secondary btn_lg">Найти программу</button>
-
+        <button type="button" class="btn btn_secondary btn_lg" data-triger-modal="show-program">Найти программу</button>
     </div>
 </section>

@@ -2,15 +2,73 @@
 
 .modal {
     position: fixed;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    inset: 0;
     opacity: 0;
-    transition: opacity 0.5s, transform 0.5s, top 0.5s;
-    z-index: 20;
+    transition: opacity 0.5s, background-color 0.5s, backdrop-filter 0.5s;
+    z-index: -10;
+    background-color: #12121200;
+    backdrop-filter: blur(0px);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &.show {
+        @include variables.background-blur;
+        opacity: 1;
+        z-index: 20;
+    }
+
+    .nice-select,
+    input,
+    textarea {
+        max-width: 100%;
+    }
+
+    &-body {
+        max-width: 450px;
+    }
 }
 
-#close-modal {
+.modal-template {
+
+    &.show {
+        background-color: #5cb7ff4d;
+    }
+
+    &__title,
+    &__subtitle {
+        color: variables.$primary-color;
+    }
+
+    .input-box {
+        label {
+            padding-top: 0;
+            font-size: 16px;
+        }
+
+        input,
+        textarea {
+            color: variables.$brand-dark-color;
+        }
+    }
+}
+
+.template-form-wrapper {
+    @include variables.background-blur;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    padding: 36px 36px 48px;
+}
+
+.template-form {
+    display: grid;
+    gap: 24px;
+}
+
+
+.close-modal {
     position: absolute;
     right: 5px;
     top: 5px;
@@ -18,7 +76,68 @@
     border: none;
     background: transparent;
     transition: transform 0.3s;
+
     &:hover {
         transform: rotate(180deg);
     }
+}
+
+
+.bg-pink {
+    background-color: pink !important;
+}
+
+.steps {
+    width: 100%;
+}
+
+.steps__nav {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.steps-nav_show {
+    display: grid;
+}
+
+.steps__first-step,
+.steps__second-step {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+     
+}
+
+.steps__first-step_hidden {
+    display: none;
+}
+
+.steps__second-step_hidden {
+    display: none;
+}
+
+.massage {
+    border: 1px solid variables.$bg-color;
+    padding: 12px;
+    border-radius: 2px;
+    color: #f00;
+    font-weight: 600;
+    transition: border-color 0.5s, line-height 1s, opacity 1s;
+    width: 100%;
+    line-height: 1.4;
+    opacity: 1;
+}
+
+.massage__hidden {
+    border-color: transparent;
+    border-width: 0;
+    padding: 0;
+    line-height: 0;
+    opacity: 0;
+}
+
+.massage__valid {
+    color: #0f0;
 }

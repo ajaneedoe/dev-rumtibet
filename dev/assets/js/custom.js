@@ -1,18 +1,31 @@
 let button = {
-	content: "Select 2021-07-26",
+	content: "Select 2025-10-02",
 	className: "custom-button-classname",
 	onClick: (dp) => {
-		let date = new Date("2021-07-26");
+		let date = new Date("2025-10-02");
 		dp.selectDate(date);
 		dp.setViewDate(date);
 	},
 };
 
 new AirDatepicker("#date", {
-	buttons: [button, "clear"], // Custom button, and pre-installed 'clear' button
+	buttons: [button, "clear"], 
 	position: "top center",
 });
 
+let buttonProgram = {
+	content: "Select 2025-10-02",
+	className: "custom-button-classname",
+	onClick: (dp) => {
+		let date = new Date("2025-10-02");
+		dp.selectDate(date);
+		dp.setViewDate(date);
+	},
+};
+
+new AirDatepicker("#modal-date", {
+	buttons: [button, "clear"], 
+});
 
 if (document.querySelector("select")) {
 	NiceSelect.bind(document.getElementById("locations-select"), {
@@ -28,8 +41,8 @@ if (document.querySelector("select")) {
 		selectedtext: "geselecteerd",
 	});
 	NiceSelect.bind(document.getElementById("modal-locations-select"), {
-		searchable: false,
-		placeholder: "Участники",
+		searchable: true,
+		placeholder: "Локация для тура",
 		searchtext: "zoek",
 		selectedtext: "geselecteerd",
 	});
@@ -41,8 +54,6 @@ if (document.querySelector("select")) {
 	});
 }
 
-
- 
 const forEach = function (t, o, r) {
 	if ("[object Object]" === Object.prototype.toString.call(t))
 		for (var c in t)
@@ -51,19 +62,31 @@ const forEach = function (t, o, r) {
 };
 
 const hamburgers = document.querySelectorAll(".hamburger");
-const burgerMenu = document.querySelector('.header__mobile-container');
-const body = document.querySelector('body');
+const burgerMenu = document.querySelector(".header__mobile-container");
+const body = document.querySelector("body");
 
 if (hamburgers.length > 0) {
 	forEach(hamburgers, function (hamburger) {
-		hamburger.addEventListener("click", function () {
+		hamburger.addEventListener(
+			"click",
+			function () {
 				this.classList.toggle("is-active");
-                burgerMenu.classList.toggle("show");
-                body.classList.toggle('overflow-hidden');
+				burgerMenu.classList.toggle("show");
+				body.classList.toggle("overflow-hidden");
 			},
 			false
 		);
 	});
 }
 
+const inputTel = document.querySelectorAll('[type="tel"]')
 
+inputTel.forEach(item => {
+	const inputId = item.id
+	IMask(
+		document.getElementById(inputId), 
+	{
+		mask: "+{38}(000)000-00-00",
+	}
+	)
+})
