@@ -1,61 +1,36 @@
 const requestData = document.querySelector('#request-data')
-const locationsSelect = document.querySelector('#locations-select')
-const dateInput = document.querySelector('#date')
-const membersSelect = document.querySelector('#members-select')
-const trigerRequest = document.querySelector('#triger-request')
+const locationSelect = document.querySelector('#location-select')
+const calendarInput = document.querySelector('#calendar')
+const memberSelect = document.querySelector('#member-select')
+const test = document.querySelector('#triger-request')
 
 const requestConfig = {
     location: "",
     date: "",
-    members: "",
+    member: ""
 }
 
-locationsSelect.addEventListener('change', ()=> {
-    let value = locationsSelect.value
+locationSelect.addEventListener("change", () => {
+    let value = locationSelect.value
     requestConfig.location = value
-    console.log(requestConfig);
+    console.log(requestConfig)
 })
 
-dateInput.addEventListener('change', ()=> {
-    let value = dateInput.value
+calendarInput.addEventListener("change", () => {
+    let value = calendarInput.value
     requestConfig.date = value
-    console.log(requestConfig);
+    console.log(requestConfig)
 })
 
-membersSelect.addEventListener('change', ()=> {
-    let value = membersSelect.value
-    requestConfig.members = value
-    console.log(requestConfig);
+memberSelect.addEventListener("change", () => {
+    let value = memberSelect.value
+    requestConfig.member = value
+    console.log(requestConfig)
 })
 
-const setValue = ()=> {
-    const formValue = `Локация для тура: ${requestConfig.location}\nДата похода: ${requestConfig.date}\nУчастники: ${requestConfig.members}`
+const setValue = () => {
+    const formValue = `Локация для тура: ${requestConfig.location}\nДата похода: ${requestConfig.date}\nУчастники: ${requestConfig.member}`
     requestData.innerHTML = formValue
 }
 
-trigerRequest.addEventListener('click', setValue)
-
-const modalLocationsSelect = document.querySelector('#modal-locations-select')
-const modalDate = document.querySelector('#modal-date')
-const modalMembersSelect =  document.querySelector('#modal-members-select')
-
-const checketValue = ()=> {
-    console.log(modalLocationsSelect.value);
-    if(modalLocationsSelect.value === "") {
-        console.log('ok')
-    }
-
-    if(modalDate.value === "") {
-        console.log('ok')
-    }
-
-    console.log(modalMembersSelect.value);
-    if(modalMembersSelect.value === "") {
-        console.log('ok')
-    }
-}
-
-checketValue()
-
-
-
+test.addEventListener("click", setValue)
