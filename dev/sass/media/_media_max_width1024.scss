@@ -1,176 +1,181 @@
-@use '../variables' as variables;
+@use "../variables.scss" as variables;
 
 @media screen and (max-width: 1024px) {
-    .header {
-        padding-top: 11px;
+	.header {
+        padding-top: 12px;
         padding-bottom: 20px;
 
-        &__logo {
-
-            img {
-                height: 44px;
-            }
-        }
-
-        &__mobile-container {
-            align-items: flex-start;
-            flex-direction: column;
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: variables.$primary-color;
-            padding: 82px 16px 50px;
+		&__logo {
+			img {
+				height: 44px;
+			}
+		}
+        
+		&__mobile-container {
+			flex-direction: column;
+			position: absolute;
+			align-items: flex-start;
+			top: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background-color: variables.$primary-color;
+			padding: 72px 16px 50px;
             display: none;
-    
-            .btn {
-                max-width: 320px;
-                width: 100%;
-                margin: auto auto 0;
-                @include variables.btn-secondary;
-    
-                &:hover {
-                    background-color: transparent;
-                    border-color: variables.$brand-light-color;
-                }
-            }
-        }
+
+			.btn {
+				max-width: 320px;
+				width: 100%;
+				margin: auto auto 0;
+				@include variables.btn_secondary;
+
+				&:hover {
+					background-color: transparent;
+					border-color: variables.$brand-light-color;
+				}
+			}
+		}
 
         &__nav {
             overflow: auto;
         }
 
-        &__nav-list {
-            flex-direction: column;
-        }
+		&__nav-list {
+			flex-direction: column;
+		}
 
-        &__nav-link {
-            font-weight: 400;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-    
-            svg {
-                display: inline-block;
-                width: 6px;
-                height: 10px;
-                margin-right: 10px;
-                transition: 0.3s;
-            }
-        }
-    }
+		&__nav-link {
+			font-size: 14px;
+			font-weight: 400;
+			display: flex;
 
-    .container {
-        padding: 0 16px;
-    }
+			svg {
+				display: inline-block;
+				width: 6px;
+				height: 10px;
+				margin-right: 10px;
+				margin-top: 5px;
+				transition: 0.3s;
+			}
 
-    .first-screen {
-        height: auto;
-        min-height: 612px;
-        padding-bottom: 50px;
+			&:hover {
+				svg {
+					margin-right: 16px;
+				}
+			}
+		}
+	}
 
-       &__title {
-            font-size: 28px;
-            margin-bottom: 31px;
-            letter-spacing: 0px;
-        }
-    }
+	.container {
+		padding: 0 16px;
+		gap: 40px;
+	}
 
-    .first-screen-form,
-    .offers-images {
-        display: none;
-    }
+	.first-screen {
+		height: auto;
+		min-height: 611px;
+		padding-bottom: 50px;
+	}
 
-    .modal__first-screen-form {
-        display: flex;
-        flex-direction: column;
-        background-color: variables.$primary-color;
-        border: 1px solid variables.$bg-accent-color;
-    }
+	.first-screen-form,
+	.offers-images {
+		display: none;
+	}
 
-    .btn.btn_lg {
-        padding: 17px 38px;
-    }
+	.modal__first-screen-form {
+		display: flex;
+		flex-direction: column;
+		background-color: variables.$primary-color;
+		border: 1px solid variables.$bg-accent-color;
+		max-width: 550px;
+		width: 100%;
 
-    .about {
-        padding: 50px 0;
-        
-        &__container {
-            flex-direction: column-reverse;
-            gap: 40px;
-        }
+		button {
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
 
-        &__media {
-            max-width: 100%;
-        }
+	.first-screen__title {
+		font-size: 28px;
+		margin-bottom: 32px;
+		letter-spacing: 0;
+	}
 
-        &__media {
-            justify-content: center;
-        }
+	.about {
+		padding: 50px 0;
 
-        &__media-item {
-            width: 358px;
-            height: 416px;
+			&__container {
+			flex-direction: column-reverse;
+			}
 
-            &-img {
-                width: 100%;
-                border-radius: 24px;
-            }
+			&__media {
+			max-width: 100%;
+			}
 
-            &:first-child {
-                display: none;
-            }
+			&__media {
+			justify-content: center;
 
-            &:last-child {
-                margin: 0;
-            }
-        }
-    }
+				&-item {
+				width: 358px;
+				height: 416px;
+				}
 
-    .template-content {
-        max-width: 100%;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
+				&-img {
+				width: 100%;
+				}
+			}
+		}
 
-            .btn {
-                margin: 0 auto;
-                padding: 13px 24px;
-            }
-        }
+	.about__media-item {
+		&:first-child {
+			display: none;
+		}
 
-    .template-top-title {
-        font-size: 16px;
-        line-height: 1.25;
-        margin-bottom: 8px;
-    }
+		&:last-child {
+			margin: 0;
+		}
+	}
 
-    .template-title {
-        font-size: 24px;
-        margin-bottom: 24px;
-    }
+	.template-content {
+		max-width: 100%;
+		padding-top: 0;
+		display: flex;
+		flex-direction: column;
 
-    .template-description {
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 24px;
-    }
+		.btn {
+			margin: 0 auto;
+			padding: 13px 24px;
+		}
+	}
 
-    .offers {
-        padding: 50px 0;
-    }
+	.template-top-title {
+		font-size: 16px;
+		line-height: 1.25;
+		margin-bottom: 8px;
+	}
 
-    .offers__container {
-        display: block;
-    }
+	.template-title {
+		font-size: 24px;
+		margin-bottom: 24px;
+	}
 
-    .offers__template-title {
-        margin-bottom: 32px;
-    }
+	.template-description {
+		font-size: 16px;
+		margin-bottom: 24px;
+	}
 
-    .offers-advanteges {
-        gap: 32px;
-        margin-bottom: 32px;
-    }
+	.offers {
+		padding: 50px 0;
+	}
+
+	.offers__template-description {
+		margin-bottom: 32px;
+	}
+
+	.offers-advanteges {
+		gap: 32px;
+		margin-bottom: 32px;
+	}
 }

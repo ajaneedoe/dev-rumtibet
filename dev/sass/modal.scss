@@ -1,16 +1,16 @@
-@use 'variables' as variables;
+@use "variables" as variables;
 
 .modal {
     position: fixed;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.5s, background-color 0.5s, backdrop-filter 0.5s;
     z-index: -10;
+    opacity: 0;
+    inset: 0;
+    transition: opacity 0.5s, background-color 0.5s, backdrop-filter 0.5s;
+    display: grid;
+    justify-content: center;
+    align-items: center;
     background-color: #12121200;
     backdrop-filter: blur(0px);
-    display: grid;
-    align-items: center;
-    justify-content: center;
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -19,27 +19,26 @@
         opacity: 1;
         z-index: 20;
     }
-
+    
     .nice-select,
     input,
     textarea {
         max-width: 100%;
     }
 
+    .nice-select-dropdown {
+        background-color: variables.$primary-color;
+    }
+
     &-body {
         max-width: 450px;
+        position: relative;
     }
 }
 
 .modal-template {
-
     &.show {
         background-color: #5cb7ff4d;
-    }
-
-    &__title,
-    &__subtitle {
-        color: variables.$primary-color;
     }
 
     .input-box {
@@ -57,7 +56,7 @@
 
 .template-form-wrapper {
     @include variables.background-blur;
-    border: 1px solid #fff;
+    border: 1px solid variables.$bg-color;
     border-radius: 12px;
     padding: 36px 36px 48px;
 }
@@ -70,21 +69,15 @@
 
 .close-modal {
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: -12px;
+    top: 11px;
     z-index: 10;
     border: none;
-    background: transparent;
-    transition: transform 0.3s;
+    background-color: transparent;
 
     &:hover {
-        transform: rotate(180deg);
+        color: variables.$text-accent-color;
     }
-}
-
-
-.bg-pink {
-    background-color: pink !important;
 }
 
 .steps {
@@ -97,7 +90,7 @@
     gap: 12px;
 }
 
-.steps-nav_show {
+.steps__nav_show {
     display: grid;
 }
 
@@ -107,7 +100,6 @@
     flex-direction: column;
     gap: 24px;
     margin-bottom: 24px;
-     
 }
 
 .steps__first-step_hidden {
@@ -118,19 +110,20 @@
     display: none;
 }
 
-.massage {
-    border: 1px solid variables.$bg-color;
-    padding: 12px;
+
+.message {
+    border: 1px solid variables.$brand-light-color;
     border-radius: 2px;
-    color: #f00;
+    padding: 12px;
+    color: #ff0000;
     font-weight: 600;
-    transition: border-color 0.5s, line-height 1s, opacity 1s;
     width: 100%;
     line-height: 1.4;
     opacity: 1;
+    transition: border-color 0.5s, line-height 1s, opacity 1s;
 }
 
-.massage__hidden {
+.message__hidden {
     border-color: transparent;
     border-width: 0;
     padding: 0;
@@ -138,6 +131,6 @@
     opacity: 0;
 }
 
-.massage__valid {
-    color: #0f0;
+.message__valid {
+    color: #00ff00;
 }
