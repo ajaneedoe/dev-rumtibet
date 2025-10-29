@@ -1,8 +1,8 @@
 let button = {
-	content: "Select 2025-25-02",
+	content: "Select 2025-10-02",
 	className: "custom-button-classname",
 	onClick: (dp) => {
-		let date = new Date("2025-25-02");
+		let date = new Date("2025-10-02");
 		dp.selectDate(date);
 		dp.setViewDate(date);
 	},
@@ -14,10 +14,10 @@ new AirDatepicker("#date", {
 });
 
 let buttonProgram = {
-	content: "Select 2025-25-02",
+	content: "Select 2025-10-02",
 	className: "custom-button-classname",
 	onClick: (dp) => {
-		let date = new Date("2025-25-02");
+		let date = new Date("2025-10-02");
 		dp.selectDate(date);
 		dp.setViewDate(date);
 	},
@@ -89,4 +89,16 @@ inputTel.forEach(item => {
 		mask: "+{38}(000)000-00-00",
 	}
 	)
+})
+
+document.querySelectorAll('.blog__card-title').forEach(title => {
+	title.addEventListener('click', event => {
+    	const card = event.target.closest('.blog__card');
+    	card.classList.toggle('active');
+	});
+});
+
+const visibleDecsription = document.querySelector('.blog__card:nth-child(2) .blog__card-description_hidden')
+visibleDecsription.addEventListener('click', ()=> {
+	visibleDecsription.classList.toggle('blog__card-description_visible')
 })
