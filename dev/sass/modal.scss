@@ -1,16 +1,16 @@
-@use "variables" as variables;
+@use 'variables' as variables;
 
 .modal {
     position: fixed;
-    z-index: -10;
-    opacity: 0;
     inset: 0;
+    opacity: 0;
     transition: opacity 0.5s, background-color 0.5s, backdrop-filter 0.5s;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    z-index: -10;
     background-color: #12121200;
     backdrop-filter: blur(0px);
+    display: grid;
+    align-items: center;
+    justify-content: center;
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -19,26 +19,27 @@
         opacity: 1;
         z-index: 20;
     }
-    
+
     .nice-select,
     input,
     textarea {
         max-width: 100%;
     }
 
-    .nice-select-dropdown {
-        background-color: variables.$primary-color;
-    }
-
     &-body {
         max-width: 450px;
-        position: relative;
     }
 }
 
 .modal-template {
+
     &.show {
         background-color: #5cb7ff4d;
+    }
+
+    &__title,
+    &__subtitle {
+        color: variables.$primary-color;
     }
 
     .input-box {
@@ -54,9 +55,11 @@
     }
 }
 
+
+
 .template-form-wrapper {
     @include variables.background-blur;
-    border: 1px solid variables.$bg-color;
+    border: 1px solid #fff;
     border-radius: 12px;
     padding: 36px 36px 48px;
 }
@@ -67,17 +70,24 @@
 }
 
 
+
 .close-modal {
     position: absolute;
-    right: -12px;
-    top: 11px;
+    right: 5px;
+    top: 5px;
     z-index: 10;
     border: none;
-    background-color: transparent;
+    background: transparent;
+    transition: transform 0.3s;
 
     &:hover {
-        color: variables.$text-accent-color;
+        transform: rotate(180deg);
     }
+}
+
+
+.bg-pink {
+    background-color: pink;
 }
 
 .steps {
@@ -90,7 +100,7 @@
     gap: 12px;
 }
 
-.steps__nav_show {
+.steps-nav_show {
     display: grid;
 }
 
@@ -100,6 +110,7 @@
     flex-direction: column;
     gap: 24px;
     margin-bottom: 24px;
+
 }
 
 .steps__first-step_hidden {
@@ -109,7 +120,6 @@
 .steps__second-step_hidden {
     display: none;
 }
-
 
 .message {
     font-size: 12px;
@@ -129,12 +139,14 @@
     opacity: 0;
 }
 
+
+
 .error-field {
 
     [data-required-field],
     .nice-select {
         transition: box-shadow 0.2s, background-color 1.5s, ;
-        background-color: #a7060630;
+        background-color: #ff000030;
         box-shadow: 0px 0px 8px 1px red;
 
     }
@@ -150,7 +162,7 @@
     .nice-select {
         transition: box-shadow 0.2s, background-color 1.5s, ;
         background-color: #1eff0030;
-        box-shadow: 0px 0px 8px 1px #37b415;
+        box-shadow: 0px 0px 8px 1px #37ff00;
     }
 
     .message {
@@ -159,12 +171,36 @@
 }
 
 
-[data-required-field] ~ label:not(.label-icon) {
+[data-required-field]~label:not(.label-icon) {
     position: relative;
+
     &::before {
         content: "*";
         position: absolute;
         left: 0;
         top: 0;
     }
+}
+
+input:-webkit-autofill {
+    background-color: #1A3E3E;
+    -webkit-box-shadow: 0 0 0px 1000px #1A3E3E inset;
+    -webkit-text-fill-color: #fdfdfd;
+    transition: background-color 0s ease-in-out;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #1A3E3E inset;
+    -webkit-text-fill-color: #fdfdfd;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Nunito Sans", sans-serif;
+    background-color: #1A3E3E;
 }

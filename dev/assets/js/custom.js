@@ -1,31 +1,21 @@
 let button = {
-	content: "Select 2025-10-02",
+	content: "2025-30-01",
 	className: "custom-button-classname",
 	onClick: (dp) => {
-		let date = new Date("2025-10-02");
+		let date = new Date();
 		dp.selectDate(date);
 		dp.setViewDate(date);
 	},
 };
 
-new AirDatepicker("#date", {
-	buttons: [button, "clear"], // Custom button, and pre-installed 'clear' button
-	position: "top center",
-});
+const date = document.querySelectorAll('.date-input')
 
-let buttonProgram = {
-	content: "Select 2025-10-02",
-	className: "custom-button-classname",
-	onClick: (dp) => {
-		let date = new Date("2025-10-02");
-		dp.selectDate(date);
-		dp.setViewDate(date);
-	},
-};
-
-new AirDatepicker("#modal-date", {
-	buttons: [button, "clear"], // Custom button, and pre-installed 'clear' button
-});
+date.forEach(item => {
+	new AirDatepicker(item, {
+		buttons: [button, "clear"],
+		position: "top center",
+	});
+})
 
 if (document.querySelector("select")) {
 	NiceSelect.bind(document.getElementById("locations-select"), {
@@ -41,7 +31,7 @@ if (document.querySelector("select")) {
 		selectedtext: "geselecteerd",
 	});
 	NiceSelect.bind(document.getElementById("modal-locations-select"), {
-		searchable: true,
+		searchable: false,
 		placeholder: "Локация для тура",
 		searchtext: "zoek",
 		selectedtext: "geselecteerd",
@@ -54,6 +44,8 @@ if (document.querySelector("select")) {
 	});
 }
 
+
+
 const forEach = function (t, o, r) {
 	if ("[object Object]" === Object.prototype.toString.call(t))
 		for (var c in t)
@@ -62,18 +54,16 @@ const forEach = function (t, o, r) {
 };
 
 const hamburgers = document.querySelectorAll(".hamburger");
-const burgerMenu = document.querySelector(".header__mobile-container");
-const body = document.querySelector("body");
+const burgerMenu = document.querySelector('.header__mobile-container');
+const body = document.querySelector('body');
 
 if (hamburgers.length > 0) {
 	forEach(hamburgers, function (hamburger) {
-		hamburger.addEventListener(
-			"click",
-			function () {
-				this.classList.toggle("is-active");
-				burgerMenu.classList.toggle("show");
-				body.classList.toggle("overflow-hidden");
-			},
+		hamburger.addEventListener("click", function () {
+			this.classList.toggle("is-active");
+			burgerMenu.classList.toggle("show");
+			body.classList.toggle('overflow-hidden');
+		},
 			false
 		);
 	});
@@ -83,22 +73,24 @@ const inputTel = document.querySelectorAll('[type="tel"]')
 
 inputTel.forEach(item => {
 	const inputId = item.id
+
 	IMask(
-		document.getElementById(inputId), 
-	{
-		mask: "+{38}(000)000-00-00",
-	}
+		document.getElementById(inputId),
+		{
+			mask: '+{38}(000)000-00-00'
+		}
 	)
 })
 
-document.querySelectorAll('.blog__card-title').forEach(title => {
-	title.addEventListener('click', event => {
-    	const card = event.target.closest('.blog__card');
-    	card.classList.toggle('active');
-	});
+
+const swiper = new Swiper('.swiper-popular', {
+	direction: 'horizontal',
+	loop: true,
+	slidesPerView: 3,
+	spaceBetween: 20,
+	speed: 2500,
+	// autoplay: {
+	// 	delay: 1000,
+	// },
 });
 
-const visibleDecsription = document.querySelector('.blog__card:nth-child(2) .blog__card-description_hidden')
-visibleDecsription.addEventListener('click', ()=> {
-	visibleDecsription.classList.toggle('blog__card-description_visible')
-})
