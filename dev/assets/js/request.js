@@ -153,9 +153,4 @@ const checkedValue = () => {
     }
 }
 
-// array.forEach(field => {
-//     field.value !== "" ? console.log("submit form") : null
-// })
-
 submitButtonStepFirst.addEventListener('click', checkedValue);
-
